@@ -1,0 +1,87 @@
+# CUSTOM LICENSE — NON-COMMERCIAL, ATTRIBUTION PROTECTED, SHARE-ALIKE
+
+Copyright (c) 2026 wen7090dev
+
+---
+
+## 1. GRANT OF LICENSE
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to **use, study, modify, and redistribute** the Software and derivative works, for **personal and non-commercial purposes only**, subject to all conditions set out below.
+
+---
+
+## 2. NON-COMMERCIAL RESTRICTION
+
+The Software, including all derivative works and forks, **MAY NOT** be sold, licensed, or used for any commercial purpose or financial gain, whether directly or indirectly.
+
+---
+
+## 3. MANDATORY ATTRIBUTION & CREDITS
+
+The following links, pointing to the original author (**wen7090dev**), are **MANDATORY** and must remain visible and fully functional in the application's user interface at all times:
+
+- **Portfolio:** https://wen7090dev.github.io
+- **GitHub:** https://github.com/wen7090dev
+- **Coffee:** https://buymeacoffee.com/wen7090
+
+**Rules:**
+- You **MAY NOT** remove, modify, hide, obscure, or redirect these links.
+- You **MAY** add your own name and links alongside the original ones (e.g., "Modified by [YourName] — [your-link]").
+- Your additions must not replace or diminish the visibility of the original links.
+
+---
+
+## 4. FORK & MODIFICATION DISCLOSURE
+
+If you distribute a modified version (a fork) of this Software, you **MUST**:
+
+1. Clearly state in **both the application's UI and its README / documentation** that your version is a **modified fork** of Discord RPC Manager by wen7090dev.
+   A statement such as *"Based on Discord RPC Manager by wen7090dev"* is required and must be visible.
+
+2. Include a visible link to the original repository:
+   **https://github.com/wen7090dev/discord-rpc-manager**
+
+---
+
+## 5. SHARE-ALIKE (COPYLEFT)
+
+Any derivative work, fork, or redistribution of this Software — with or without modifications — **MUST** be distributed under this exact same license.
+
+You **MAY NOT** re-license this Software or any derivative work under any other license (including MIT, GPL, Apache, proprietary, or any other terms). All forks and derivatives remain bound by these conditions indefinitely.
+
+---
+
+## 6. SOURCE CODE REQUIREMENT
+
+If you distribute a modified version of this Software in any form (compiled binaries, packaged installers, or otherwise), you **MUST** also make the **full source code** of your modifications publicly available, at no cost, under this same license.
+
+---
+
+## 7. ETHICAL USE & REPUTATION
+
+- The Software **MAY NOT** be used to create, distribute, or promote malware, spyware, ransomware, or any other malicious software.
+- Any modification that harms the user's system or privacy is strictly prohibited.
+- These conditions exist to protect the reputation of the original author and the integrity of the project.
+
+---
+
+## 8. REDISTRIBUTION & LIABILITY
+
+Redistribution — with or without modifications — is permitted **provided that**:
+
+- This license file is included in its entirety in all copies and forks.
+- All conditions in sections 2, 3, 4, 5, and 6 are fully met.
+
+**Disclaimer:** The original author (**wen7090dev**) is **NOT** responsible for any bugs, errors, or damages caused by modified versions distributed by third parties. You use and distribute modified versions entirely at your own risk.
+
+---
+
+## 9. SUPPORT & APPRECIATION (VOLUNTARY)
+
+While the Software is free to use, users who find great value in it are encouraged — but never required — to support the original author by visiting the Coffee link or leaving a star on GitHub. This helps maintain the project.
+
+---
+
+## 10. DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
