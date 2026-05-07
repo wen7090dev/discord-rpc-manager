@@ -2,7 +2,10 @@
     "name": "discord-rpc-manager",
     "version": "1.0.0",
     "description": "Custom Discord Rich Presence Manager",
-    "author": "wen7090dev",
+    "author": {
+        "name": "wen7090dev",
+        "email": "wen7090dev@gmail.com"
+    },
     "license": "Custom-NC-AP",
     "type": "module",
     "main": "electron/main.cjs",
