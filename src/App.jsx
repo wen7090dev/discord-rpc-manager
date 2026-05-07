@@ -2,6 +2,7 @@ import { Sidebar } from './components/Layout/Sidebar';
 import { TopBar } from './components/Layout/TopBar';
 import { SetupModal } from './components/Modals/SetupModal';
 import { UpdateModal } from './components/Modals/UpdateModal';
+import { ChangelogModal } from './components/Modals/ChangelogModal';
 import OnboardingTour from './components/Onboarding/OnboardingTour';
 import Dashboard from './pages/Dashboard';
 import Community from './pages/Community';
@@ -19,7 +20,7 @@ function App() {
   const [showTour, setShowTour] = useState(false);
   const prevProcsRef = useRef(new Set());
   const lastShownClipboard = useRef(null);
-  const { loadData, setStatus, initialized, settings, setSearchQuery, rpcs, applications, activeRPC, paused, stopRPC, pauseRPC, resumeRPC, setClipboardCode, updateInfo, t } = useStore();
+  const { loadData, setStatus, initialized, settings, setSearchQuery, rpcs, applications, activeRPC, paused, stopRPC, pauseRPC, resumeRPC, setClipboardCode, updateInfo, showChangelog, t } = useStore();
   const theme = settings.theme;
 
   // ── Boot ──────────────────────────────────────────────────────────────────
@@ -356,6 +357,9 @@ function App() {
         )}
         {updateInfo && (
           <UpdateModal key="update-modal" />
+        )}
+        {showChangelog && (
+          <ChangelogModal key="changelog-modal" />
         )}
       </AnimatePresence>
       {showTour && <OnboardingTour onComplete={() => setShowTour(false)} />}

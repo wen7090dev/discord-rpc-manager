@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import useStore from '../store/useStore';
-import { Moon, Globe, Trash2, Rocket, RotateCcw, Download, Check, X, Keyboard, Bell, Clipboard, Music, Terminal, Loader2, CheckCircle2, Headphones, Gamepad2, Info, RefreshCw, BookOpen } from 'lucide-react';
+import { Moon, Globe, Trash2, Rocket, RotateCcw, Download, Check, X, Keyboard, Bell, Clipboard, Music, Terminal, Loader2, CheckCircle2, Headphones, Gamepad2, Info, RefreshCw, BookOpen, Shield } from 'lucide-react';
 import clsx from 'clsx';
 
 export default function Settings() {
@@ -584,6 +584,13 @@ export default function Settings() {
               >
                 <BookOpen size={14} />
                 {t('open_license')}
+              </button>
+              <button
+                onClick={() => window.electronAPI?.openExternal?.('https://wen7090dev.github.io/privacy-policy/discord-rpc-manager.html')}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm transition-all border bg-white/5 text-text-muted hover:bg-white/10 hover:text-text-main border-white/10"
+              >
+                <Shield size={14} />
+                {t('open_privacy')}
               </button>
               <button
                 onClick={handleCheckUpdate}

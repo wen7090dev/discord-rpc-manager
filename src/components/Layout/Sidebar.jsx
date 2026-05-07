@@ -62,7 +62,7 @@ export function Sidebar({ activeTab, setActiveTab }) {
             <div className="flex flex-col gap-0.5">
               <p className="text-[10px] text-text-muted uppercase font-bold tracking-widest">{t('credits')}</p>
               <a
-                href="https://wen7090dev.github.io/license/Discord-RPC-Manager.html"
+                href="https://wen7090dev.github.io/license/discord-rpc-manager.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[9px] text-text-muted hover:text-discord-blurple transition-colors underline decoration-current"

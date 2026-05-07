@@ -1,6 +1,6 @@
 {
     "name": "discord-rpc-manager",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Custom Discord Rich Presence Manager",
     "author": {
         "name": "wen7090dev",
@@ -18,7 +18,7 @@
     "dependencies": {
         "clsx": "^2.1.1",
         "discord-rpc": "^4.0.1",
-    "electron-updater": "^6.3.9",
+        "electron-updater": "^6.3.9",
         "framer-motion": "^11.2.10",
         "lucide-react": "^0.395.0",
         "react": "^18.3.1",
@@ -34,7 +34,7 @@
         "concurrently": "^8.2.2",
         "cross-env": "^10.1.0",
         "electron": "^31.0.1",
-        "electron-builder": "^24.13.3",
+        "electron-builder": "^26.8.1",
         "postcss": "^8.4.38",
         "tailwindcss": "^3.4.4",
         "vite": "^5.3.1",
@@ -60,7 +60,10 @@
             "package.json"
         ],
         "extraResources": [
-            { "from": "LICENSE", "to": "LICENSE.txt" }
+            {
+                "from": "LICENSE",
+                "to": "LICENSE.txt"
+            }
         ],
         "win": {
             "target": [
@@ -78,15 +81,32 @@
             "createDesktopShortcut": true,
             "createStartMenuShortcut": true,
             "include": "build/installer.nsh",
-            "installerLanguages": ["en_US", "fr_FR", "es_ES", "de_DE"]
+            "installerLanguages": [
+                "en_US",
+                "fr_FR",
+                "es_ES",
+                "de_DE"
+            ]
         },
         "portable": {
             "artifactName": "Discord-RPC-Manager-Portable.exe"
         },
         "mac": {
             "target": [
-                { "target": "dmg", "arch": ["x64", "arm64"] },
-                { "target": "zip", "arch": ["x64", "arm64"] }
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
             ],
             "icon": "public/logo.png",
             "category": "public.app-category.utilities",
@@ -94,8 +114,18 @@
         },
         "linux": {
             "target": [
-                { "target": "AppImage", "arch": ["x64"] },
-                { "target": "deb",      "arch": ["x64"] }
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64"
+                    ]
+                }
             ],
             "icon": "public/logo.png",
             "category": "Utility",

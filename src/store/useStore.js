@@ -154,6 +154,7 @@ const useStore = create((set, get) => ({
   steamGame: '',
   discordUser: _cachedDiscordUser,
   updateInfo: null,
+  showChangelog: false,
   communityCache: _communityCache,
   folders: [],
   folderFilter: null,
@@ -263,6 +264,10 @@ const useStore = create((set, get) => ({
   })),
   clearNotifications: () => set({ notifications: [] }),
   setPreviewData: (data) => set({ previewData: data }),
+  dismissChangelog: () => {
+    set(state => ({ showChangelog: false, settings: { ...state.settings, lastSeenVersion: __APP_VERSION__ } }));
+    get().saveData();
+  },
 
   t: (key) => {
     const lang = get().settings?.language || 'en';
@@ -276,13 +281,18 @@ const useStore = create((set, get) => ({
     }
     try {
       const data = await window.electronAPI.getStorage();
+      const lastSeenVersion = data.settings?.lastSeenVersion;
+      const currentVersion = __APP_VERSION__;
+      const showChangelog = !!lastSeenVersion && lastSeenVersion !== currentVersion;
       set({
         rpcs:         [SYSTEM_RPC, ...(data.rpcs || [])],
         applications: [SYSTEM_APP, ...(data.applications || [])],
-        settings: { ...get().settings, ...(data.settings || {}) },
+        settings: { ...get().settings, ...(data.settings || {}), lastSeenVersion: currentVersion },
         folders: data.folders || [],
-        initialized: true
+        initialized: true,
+        showChangelog,
       });
+      if (showChangelog || !lastSeenVersion) get().saveData();
     } catch {
       set({ initialized: true });
     }
