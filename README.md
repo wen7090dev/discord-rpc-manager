@@ -14,26 +14,171 @@
 
 ---
 
+## Screenshots
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/dashboard.png" alt="Dashboard" width="700" />
+  <p><em>Dashboard — manage all your Rich Presence profiles</em></p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/editor.png" alt="Profile Editor" width="700" />
+  <p><em>Profile Editor — live preview as you type</em></p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/settings.png" alt="Settings" width="700" />
+  <p><em>Settings — themes, language, integrations</em></p>
+</div>
+
+---
+
 ## Features
 
-- **Quick Search** — Instantly find your profiles with the search bar.
-- **Dynamic Dashboard** — Manage multiple Rich Presence profiles in one place.
-- **Profile Rotation** — Automatically cycle through profiles on a timer.
-- **Folders** — Organize your profiles into color-coded groups.
-- **Templates** — Pre-configured presets for Gaming, Coding, Chill, and more.
-- **Media Detection** — Auto-detect Spotify, Steam, and system media (Windows SMTC, Linux playerctl, macOS AppleScript).
-- **Dynamic Variables** — Use `{artist}`, `{title}`, `{game}`, `{time}`, `{date}`, `{cpu}`, `{ram}`, `{weather:City}` in any text field.
-- **Live Preview** — See exactly how your status looks before activating it.
-- **Profile Sharing** — Share any profile with a compact `rpc:...` code.
-- **Activity Scheduler** — Auto-activate profiles on a time and day schedule.
-- **Profile Rotation** — Cycle through multiple statuses automatically.
-- **Live Notifications** — Real-time updates when your status changes.
-- **Activity Logs** — Console to debug and monitor RPC events.
-- **Stats & Analytics** — Track total time spent on each profile.
-- **Internationalization** — Full support for English, French, Spanish, and German.
-- **Themes** — Light, Dark, Midnight, Ocean, Forest, Sakura.
-- **Portable Mode** — Run without installation, data stored next to the executable.
-- **Auto-update** — Notified instantly when a new release is available on GitHub.
+### Profile Management
+- **Create, edit, duplicate, delete** Rich Presence profiles
+- **Pin** favorite profiles to the top of your list
+- **List & Grid views** — switch between compact list or card layout
+- **Sort** by default (pinned), alphabetical, most used, or newest first
+- **Real-time search** — find profiles by name, description, or state
+- **Folders** — organize profiles into color-coded groups with drag & drop support
+
+### Rich Presence Fields
+- **Activity type** — Playing, Watching, Listening, Competing
+- **Details & State** — the two text lines shown in Discord
+- **Large & Small images** with custom hover text (uses your Discord app assets)
+- **Interactive buttons** — up to 2 clickable buttons with custom label & URL
+- **Timestamp** — elapsed time or countdown mode with custom duration
+- **Party** — party ID, size, max, join/spectate secrets (Playing mode only)
+
+### Dynamic Variables
+Use these placeholders in any text field — they are replaced in real time:
+
+| Variable | Description |
+|---|---|
+| `{time}` | Current time (HH:MM) |
+| `{date}` | Current date |
+| `{day}` | Day of the week |
+| `{artist}` | Currently playing artist (media detection) |
+| `{title}` | Currently playing track title |
+| `{game}` | Currently running Steam game |
+| `{cpu}` | CPU usage percentage |
+| `{ram}` | RAM usage percentage |
+| `{weather:CityName}` | Current temperature for the specified city |
+
+### Live Preview
+- **Real-time Discord preview** — see exactly how your status looks before activating
+- Renders the activity type prefix, details, state, images, buttons, and timer
+- Timestamp counter updates every second in the preview
+
+### Profile Rotation
+- **Cycle through multiple profiles** at a configurable interval (minimum 5 s)
+- **Loop mode** — continuously cycle indefinitely
+- **Once mode** — run the sequence once then stop
+- Visual spinning indicator while rotation is active
+
+### Scheduler
+- **Auto-activate profiles** on specific days and times
+- Set **start time** and **end time** per profile
+- **Day selection** — pick any combination of Mon–Sun
+- Profile activates and deactivates automatically (checked every 60 s)
+
+### Process Linking
+- **Link any profile to a `.exe`** — profile auto-activates when that process starts
+- **Auto-stop** — profile stops when the linked process closes
+- Live searchable dropdown of currently running processes
+
+### Media Detection
+Automatically fills `{artist}` and `{title}` variables:
+- **Windows** — SMTC (System Media Transport Controls) via WinRT / PowerShell, with Spotify fallback
+- **Linux** — `playerctl` (MPRIS protocol), supports Spotify, VLC, Rhythmbox, and all MPRIS players; in-app install button when missing
+- **macOS** — AppleScript for Spotify and Apple Music
+
+### Steam Detection
+- Detects the currently running Steam game and fills `{game}`
+- **Windows** — reads registry (`HKCU\SOFTWARE\Valve\Steam`)
+- **Linux** — parses `~/.steam/registry.vdf`
+- **macOS** — parses `~/Library/Application Support/Steam/registry.vdf`
+- Game names fetched from the Steam API
+
+### System Monitoring
+- **CPU usage** (`{cpu}`) and **RAM usage** (`{ram}`) updated in real time
+- Polled automatically and available anywhere in your profile text fields
+
+### Profile Sharing
+- **Share codes** — export any profile as a compact `rpc:…` string (v2 deflate compression)
+- **Import panel** — paste a code to preview the profile before importing
+- **Auto-link** — automatically link to an existing Discord app if the ID matches
+- **Clipboard detection** — the import panel opens automatically when a share code is detected in the clipboard
+- **Deep links** — `rpcmanager://import/{code}` opens and imports directly
+
+### Community Marketplace
+- Browse profiles shared by the community
+- **Tabs** — All / Top 10 / Top This Week / Top This Month
+- **Sort** by newest, oldest, most liked, least liked, or alphabetically
+- **Search** by profile name
+- One-click import with live preview before adding
+- New community profiles trigger an in-app notification
+
+### Applications
+- Register your Discord Developer Portal apps by Client ID
+- Auto-resolve app name from Discord
+- **Asset browser** — browse and preview your uploaded art assets directly in the image key dropdowns
+
+### Statistics & Analytics
+- Total time spent across all profiles
+- Per-profile time tracking with percentage bars and ranking
+- Top profile badge
+
+### Activity Logs
+- Real-time terminal-style log viewer (last 100 entries)
+- **Info**, **Success**, and **Error** log types with timestamps
+- **Export logs** as `.txt`
+- **Clear** button to wipe logs
+
+### Tray Integration
+- Tray icon changes color based on connection status (green = connected, gray = disconnected)
+- **Quick-launch** any profile directly from the tray menu
+- **Show / Hide** the window from the tray
+- **Quit** the app from the tray
+
+### Auto-Update
+- **Background check** for new GitHub releases
+- **Download progress** shown in real time
+- **Changelog modal** on first launch after an update, fetching release notes from GitHub
+- **One-click install & restart** when the download is ready
+- Dev mode redirects to the GitHub releases page
+
+### Notifications
+- **In-app notification center** with bell icon and unread count
+- Types: Info, Success, Error
+- **System notifications** for Discord disconnections, auto-launch events, and community updates (can be toggled off in Settings)
+
+### Onboarding Tour
+- **Guided 5-step tour** on first launch, highlighting key UI elements
+- Spotlight overlay with smart tooltip positioning
+- Skip at any time with Escape
+
+### Keyboard Shortcuts
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl+N` | New profile (Dashboard) |
+| `Ctrl+K` | Focus search bar |
+| `Ctrl+S` | Stop active RPC |
+| `Ctrl+P` | Pause / Resume RPC |
+| `Ctrl+1`–`Ctrl+9` | Activate profile 1–9 |
+| `Escape` | Close form / dismiss tour |
+
+### Settings
+- **6 themes** — Light, Dark, Midnight, Ocean, Forest, Sakura
+- **4 languages** — English, Français, Español, Deutsch
+- **Auto-launch** on system boot
+- **Close behavior** — minimize to tray or quit
+- **Export / Import backup** — full JSON backup of all profiles, apps, folders, and settings
+- **Reset all data** with confirmation
+- **Privacy Policy** and **License** links
+- playerctl install helper (Linux)
 
 ---
 
@@ -65,8 +210,6 @@ The app opens at `http://localhost:5173` via Vite, then Electron wraps it automa
 
 ### Windows
 
-Run on a Windows machine:
-
 ```bash
 npm run build
 ```
@@ -79,8 +222,6 @@ Output in `dist_electron/`:
 | `Discord-RPC-Manager-Portable.exe` | Portable executable, no installation needed |
 
 ### macOS
-
-Run on a macOS machine:
 
 ```bash
 npm run build
@@ -97,8 +238,6 @@ Output in `dist_electron/`:
 
 ### Linux
 
-Run on a Linux machine (or inside WSL2 with a proper Node environment):
-
 ```bash
 npm run build
 ```
@@ -112,44 +251,23 @@ Output in `dist_electron/`:
 
 ### GitHub Actions (recommended for all platforms at once)
 
-Create `.github/workflows/release.yml` with a matrix build strategy targeting `windows-latest`, `macos-latest`, and `ubuntu-latest`. Each job runs `npm run build` and uploads the artifacts to a GitHub Release. This is the simplest way to produce all binaries in one go.
+Push a `v*` tag to trigger the workflow. It builds Windows (NSIS + Portable), macOS (dmg x64 + arm64), and Linux (AppImage + deb) in parallel and uploads everything to a GitHub Release automatically.
 
 ---
 
 ## Portable Mode
 
-The Windows portable build stores its data in a `_portable` folder next to the executable.
-To activate portable mode on any platform, create a folder named `_portable` next to the app binary before launching — all settings and profiles will be written there instead of the user's AppData.
+Create a folder named `_portable` next to the executable before launching — all settings and profiles will be written there instead of the user's AppData. This works on all platforms.
 
 ---
 
 ## Discord Application Setup
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications) and click **New Application**.
-2. Give it a name — this is what Discord shows as your activity title (e.g., `Working`, `YouTube`, `Spotify`).
+2. Give it a name — this is what Discord shows as your activity title.
 3. Copy the **Application ID** from the General Information tab.
 4. In the app, go to **Applications** and add your Client ID.
 5. Optionally, upload images under **Rich Presence → Art Assets** to use as image keys.
-
----
-
-## Dynamic Variables
-
-You can use these placeholders in the **Details** and **State** fields of any profile:
-
-| Variable | Description |
-|---|---|
-| `{time}` | Current time (HH:MM) |
-| `{date}` | Current date |
-| `{day}` | Day of the week |
-| `{artist}` | Currently playing artist (media detection) |
-| `{title}` | Currently playing track title (media detection) |
-| `{game}` | Currently running Steam game (Steam detection) |
-| `{cpu}` | CPU usage percentage |
-| `{ram}` | RAM usage percentage |
-| `{weather:CityName}` | Current temperature for the specified city |
-
-Media and Steam detection can be enabled or disabled individually in **Settings**.
 
 ---
 
@@ -163,6 +281,7 @@ Media and Steam detection can be enabled or disabled individually in **Settings*
 - **Framer Motion** — Animations
 - **Lucide Icons** — Icon set
 - **discord-rpc** — Discord Rich Presence IPC client
+- **electron-updater** — Auto-update system
 
 ---
 
