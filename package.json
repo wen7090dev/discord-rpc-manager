@@ -1,6 +1,6 @@
 {
     "name": "discord-rpc-manager",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Custom Discord Rich Presence Manager",
     "author": {
         "name": "wen7090dev",

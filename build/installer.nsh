@@ -2,6 +2,19 @@
 ; Language detection is automatic: NSIS picks the active MUI language.
 ; Fallback = first MUI_LANGUAGE declared (English).
 
+; ─── Auto-update: silent install when launched by electron-updater ────────────
+; electron-updater always passes --updated when running the installer for an
+; update. We detect it here and force silent mode so the wizard is skipped.
+; First-time installs (no --updated flag) still show the full UI.
+!macro customInit
+  !include "FileFunc.nsh"
+  ClearErrors
+  ${GetOptions} $CMDLINE "--updated" $R0
+  ${IfNot} ${Errors}
+    SetSilent silent
+  ${EndIf}
+!macroend
+
 !macro customHeader
   ; ── Uninstall data prompt — needed in both installer & uninstaller builds ──
   LangString MAINT_DATA_PROMPT ${LANG_ENGLISH} \
