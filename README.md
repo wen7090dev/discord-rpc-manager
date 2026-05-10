@@ -37,6 +37,25 @@
 
 ---
 
+## Screenshots
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/dashboard.png" alt="Dashboard" width="700" />
+  <p><em>Dashboard — manage all your Rich Presence profiles</em></p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/editor.png" alt="Profile Editor" width="700" />
+  <p><em>Profile Editor — live preview as you type</em></p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wen7090dev/discord-rpc-manager/main/screenshots/settings.png" alt="Settings" width="700" />
+  <p><em>Settings — themes, language, integrations</em></p>
+</div>
+
+---
+
 ## Getting Started
 
 ### Prerequisites
